@@ -4,7 +4,6 @@ namespace CarRentalFleet
     {
         private int carId;
 
-        // Empty constructor: Add mode
         public CarForm()
         {
             InitializeComponent();
@@ -12,7 +11,6 @@ namespace CarRentalFleet
             numProductionYear.Value = DateTime.Now.Year;
         }
 
-        // Receives a car: Edit mode. : this() makes sure the controls exist first.
         public CarForm(Car car) : this()
         {
             Text = "Edit car";
@@ -25,7 +23,6 @@ namespace CarRentalFleet
             cmbStatus.SelectedIndex = cmbStatus.FindStringExact(car.Status);
         }
 
-        // The result the main window reads after ShowDialog()
         public Car CurrentCar { get; private set; } = new Car();
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -41,7 +38,6 @@ namespace CarRentalFleet
                 return;
             }
 
-            // Own rule: a plate such as AB-101-CD has at least 6 characters
             if (plateNumber.Length < 6)
             {
                 ShowProblem("Plate number must be at least 6 characters, for example AB-101-CD.", txtPlateNumber);
@@ -60,7 +56,6 @@ namespace CarRentalFleet
                 return;
             }
 
-            // Own rule: a car cannot be more than one model year in the future
             if (productionYear > DateTime.Now.Year + 1)
             {
                 ShowProblem($"Production year cannot be later than {DateTime.Now.Year + 1}.", numProductionYear);

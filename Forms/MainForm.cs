@@ -59,7 +59,6 @@ namespace CarRentalFleet
             return dgvCars.Columns.Contains(columnName) ? dgvCars.Columns[columnName] : null;
         }
 
-        // headerText == null hides the column (used for the Id)
         private void HideOrRename(string columnName, string? headerText)
         {
             DataGridViewColumn? column = FindColumn(columnName);
@@ -71,7 +70,6 @@ namespace CarRentalFleet
                 column.HeaderText = headerText;
         }
 
-        // Clears search and filter so a newly saved or edited car is visible
         private void ShowAllCars()
         {
             txtSearch.Text = string.Empty;

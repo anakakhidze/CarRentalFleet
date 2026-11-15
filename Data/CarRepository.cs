@@ -8,7 +8,6 @@ namespace CarRentalFleet
             @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CarRentalFleetDb;" +
             "Integrated Security=True;TrustServerCertificate=True";
 
-        // status "" means "all statuses"; text "" means "all cars"
         public List<Car> Search(string text, string status)
         {
             List<Car> cars = new List<Car>();

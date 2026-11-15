@@ -10,7 +10,6 @@ namespace CarRentalFleet
         public decimal DailyRate { get; set; }
         public string Status { get; set; } = string.Empty;
 
-        // calculated: not a column, worked out from ProductionYear
         public int Age
         {
             get { return DateTime.Now.Year - ProductionYear; }
