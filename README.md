@@ -45,13 +45,17 @@ The script `database.sql` creates the database and table if they do not already 
 CarRentalFleet.slnx        Visual Studio solution file
 CarRentalFleet.csproj      Project file
 Program.cs                 Application entry point
-MainForm.cs                Main window: the list, search, filter and buttons
-MainForm.Designer.cs       Layout of the main window
-CarForm.cs                 Add/Edit dialog and its input checks
-CarForm.Designer.cs        Layout of the Add/Edit dialog
-Car.cs                     The Car model (one row of the Cars table)
-CarRepository.cs           All SQL code, the only place that talks to the database
-database.sql               Creates the database, the table and the sample data
+Forms/
+  MainForm.cs              Main window: the list, search, filter and buttons
+  MainForm.Designer.cs     Layout of the main window
+  MainForm.resx            Resources for the main window
+  CarForm.cs               Add/Edit dialog and its input checks
+  CarForm.Designer.cs      Layout of the Add/Edit dialog
+Models/
+  Car.cs                   The Car model (one row of the Cars table)
+Data/
+  CarRepository.cs         All SQL code, the only place that talks to the database
+  database.sql             Creates the database, the table and the sample data
 screenshots/               Screenshots of the application
 ```
 
@@ -67,7 +71,7 @@ The user interface never contains SQL. Every database call goes through `CarRepo
 
 1. **Create the database.** In Visual Studio, open **View → SQL Server Object Explorer**.
 2. Right-click `(localdb)\MSSQLLocalDB` and choose **New Query**.
-3. Open `database.sql` from this folder, or paste its contents into the query window, and press **Execute**. The messages pane should report that the 16 sample rows were inserted.
+3. Open `Data/database.sql`, or paste its contents into the query window, and press **Execute**. The messages pane should report that the 16 sample rows were inserted.
 4. **Open the solution.** Open `CarRentalFleet.slnx` from this folder in Visual Studio.
 5. **Build the project.** Choose **Build → Rebuild Solution**. The build should finish with 0 errors.
 6. **Run the application.** Press **F5**.
